@@ -16,8 +16,11 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        // @TODO implement
-
-        return $next($request);
+        $user = Auth::user();
+        if ($user->is_admin)
+        {
+            return $next($request);
+        }
+        return response(['status_code' => 401, 'status_text' => 'Unauthorized', 'data' => Null], 401);
     }
 }

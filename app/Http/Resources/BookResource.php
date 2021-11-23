@@ -20,7 +20,22 @@ class BookResource extends JsonResource
     public function toArray($request)
     {
         return [
-            //@todo code here
+            'data' => $this->data,
+            'links' => [
+                'first' => $this->first_page_url,
+                'last' => $this->last_page_url,
+                'prev' => $this->prev_page_url,
+                'next' => $this->next_page_url
+            ],
+            'meta' => [
+                'current_page' => $this->current_page,
+                'from' => $this->from,
+                'last_page' => $this->last_page,
+                'path' => $this->path,
+                'per_page' => $this->per_page,
+                'to' => $this->to,
+                'total' => $this->total
+            ]
         ];
     }
 }

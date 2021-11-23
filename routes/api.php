@@ -19,3 +19,9 @@ Route::post('/books', 'BooksController@post')->middleware('auth.admin');
 
 Route::post('/books/{book}/reviews', 'BooksController@postReview');
 
+Route::post('/authors', 'AuthorsController@create');
+
+Route::post('/users', 'UsersController@create');
+
+
+

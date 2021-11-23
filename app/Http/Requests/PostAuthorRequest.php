@@ -6,18 +6,18 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class PostBookReviewRequest extends FormRequest
+class PostAuthorRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
      *
      * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'review' => 'required|integer|between:1,10',
-            'comment' => 'required|string',
+            'name' => 'required|string',
+            'surname' => 'required|string'
         ];
     }
 

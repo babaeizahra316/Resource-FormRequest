@@ -53,7 +53,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-
         Schema::dropIfExists('book_reviews');
         Schema::dropIfExists('book_author');
         Schema::dropIfExists('books');
